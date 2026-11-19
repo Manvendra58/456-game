@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PLAYER 456 — Original Squid Game generative code artwork for Code Art Attack" />
+  <title>PLAYER 456 · Geometry of Survival | Code Art Attack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Cinematic intro -->
+  <div id="boot" role="dialog" aria-label="Start artwork">
+    <div class="boot-bg" aria-hidden="true"></div>
+    <div class="boot-inner">
+      <div class="boot-shapes" aria-hidden="true">
+        <span class="shape circle"></span>
+        <span class="shape triangle"></span>
+        <span class="shape square"></span>
+      </div>
+      <p class="boot-event">CODE ART ATTACK · WEEK 3</p>
+      <h1 class="boot-title">PLAYER <span>456</span></h1>
+      <p class="boot-tagline">THE GEOMETRY OF SURVIVAL</p>
+      <p class="boot-sub">An interactive generative artwork inspired by Squid Game</p>
+      <button id="startBtn" type="button">BEGIN</button>
+      <p class="boot-hint">Audio · Keyboard · Pointer — immersive experience</p>
+    </div>
+  </div>
+
+  <!-- Dual-layer canvas: world + post FX -->
+  <div id="stage">
+    <canvas id="world" aria-label="Squid Game artwork canvas"></canvas>
+    <canvas id="fx" aria-hidden="true"></canvas>
+  </div>
+
+  <!-- Live HUD -->
+  <header id="hud" class="hidden" aria-live="polite">
+    <div class="hud-left">
+      <div class="player-badge"><span class="sym">○ △ □</span> PLAYER 456</div>
+      <div id="sceneName" class="scene-name">ACT I — RITUAL</div>
+    </div>
+    <div class="hud-center">
+      <div id="status" class="status">—</div>
+    </div>
+    <div class="hud-right">
+      <div id="actDots" class="act-dots" aria-hidden="true"></div>
+      <button id="muteBtn" type="button" title="Toggle audio">♪</button>
+    </div>
+  </header>
+
+  <!-- Act controls overlay -->
+  <aside id="legend" class="hidden">
+    <p id="legendText">Watch the shapes awaken…</p>
+    <p id="controlsHint"></p>
+  </aside>
+
+  <!-- End / victory -->
+  <div id="endScreen" class="hidden" role="dialog">
+    <div class="end-card">
+      <div class="end-shapes" aria-hidden="true">
+        <span class="shape circle"></span>
+        <span class="shape triangle"></span>
+        <span class="shape square"></span>
+      </div>
+      <p class="end-kicker" id="endKicker">SURVIVAL COMPLETE</p>
+      <h2 id="endTitle">PLAYER 456</h2>
+      <p id="endMsg">You walked through every game.</p>
+      <div class="end-actions">
+        <button id="retryBtn" type="button">PLAY AGAIN</button>
+        <button id="shotBtn" type="button" class="ghost">CAPTURE FRAME</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modular source (code quality) -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>
